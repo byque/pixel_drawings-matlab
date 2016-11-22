@@ -1,0 +1,495 @@
+%% Creacion de la imagen
+% clear, clc; % Descomentar para borrar todo antes de comenzar
+
+% Definiciones de colores en escala de grises
+bl = 255; % Blanco en escala de grises = 255
+ne = 0; % Negro en escala de grises = 0
+ro = 54; % Rojo en escala de grises 0.2126 * 255 = 54
+
+% Dimensiones del dibujo 16 x 16 cuadrados
+di = 16;
+
+% Escala 1:16 cuadrados/px^2 (se puede modificar)
+es = 16;
+
+% Resolucion de 512 x 512 px
+res = di*es;
+
+% Crear el lienzo en blanco
+im = ones(res)*bl;
+
+% Comenzar el trazo
+% Recordar que la imagen comienza en 1 y para moverse en vertical u
+% horizontal se usa la variable es (escala). La 1ra fila comienza en 1,
+% la 2da en es+1, la 3ra en 2*es+1 ...
+
+for i = 1:es:res
+    for j = 1:es:res
+        switch i
+            case 1 % Primera fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 5*es+1 && j < 11*es+1
+                    for x = 1:es
+                        for y = j:11*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case es+1 % Segunda fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 3*es+1 && j < 5*es+1
+                    for x = es+1:2*es
+                        for y = j:5*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 5*es+1 && j < 9*es+1
+                    for x = es+1:2*es
+                        for y = j:9*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 11*es+1 && j < 13*es+1
+                    for x = es+1:2*es
+                        for y = j:13*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 2*es+1 % tercera fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 2*es+1 && j < 3*es+1
+                    for x = 2*es+1:3*es
+                        for y = j:3*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 5*es+1 && j < 9*es+1
+                    for x = 2*es+1:3*es
+                        for y = j:9*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 13*es+1 && j < 14*es+1
+                    for x = 2*es+1:3*es
+                        for y = j:14*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 3*es+1 % cuarta fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= es+1 && j < 2*es+1
+                    for x = 3*es+1:4*es
+                        for y = j:2*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 4*es+1 && j < 10*es+1
+                    for x = 3*es+1:4*es
+                        for y = j:10*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 14*es+1 && j < 15*es+1
+                    for x = 3*es+1:4*es
+                        for y = j:15*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 4*es+1 % quinta fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= es+1 && j < 2*es+1
+                    for x = 4*es+1:5*es
+                        for y = j:2*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 3*es+1 && j < 5*es+1
+                    for x = 4*es+1:5*es
+                        for y = j:5*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 9*es+1 && j < 11*es+1
+                    for x = 4*es+1:5*es
+                        for y = j:11*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 14*es+1 && j < 15*es+1
+                    for x = 4*es+1:5*es
+                        for y = j:15*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 5*es+1 % sexta fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 1 && j < es+1
+                    for x = 5*es+1:6*es
+                        for y = j:es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= es+1 && j < 4*es+1
+                    for x = 5*es+1:6*es
+                        for y = j:4*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 10*es+1 && j < 15*es+1
+                    for x = 5*es+1:6*es
+                        for y = j:15*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 15*es+1 && j < 16*es+1
+                    for x = 5*es+1:6*es
+                        for y = j:16*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 6*es+1 % septima fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 1 && j < es+1
+                    for x = 6*es+1:7*es
+                        for y = j:es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= es+1 && j < 4*es+1
+                    for x = 6*es+1:7*es
+                        for y = j:4*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 10*es+1 && j < 12*es+1
+                    for x = 6*es+1:7*es
+                        for y = j:12*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 14*es+1 && j < 15*es+1
+                    for x = 6*es+1:7*es
+                        for y = j:15*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 15*es+1 && j < 16*es+1
+                    for x = 6*es+1:7*es
+                        for y = j:16*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 7*es+1 % octava fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 1 && j < es+1
+                    for x = 7*es+1:8*es
+                        for y = j:es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 2*es+1 && j < 4*es+1
+                    for x = 7*es+1:8*es
+                        for y = j:4*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 10*es+1 && j < 11*es+1
+                    for x = 7*es+1:8*es
+                        for y = j:11*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 15*es+1 && j < 16*es+1
+                    for x = 7*es+1:8*es
+                        for y = j:16*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 8*es+1 % novena fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 1 && j < es+1
+                    for x = 8*es+1:9*es
+                        for y = j:es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 3*es+1 && j < 5*es+1
+                    for x = 8*es+1:9*es
+                        for y = j:5*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 9*es+1 && j < 11*es+1
+                    for x = 8*es+1:9*es
+                        for y = j:11*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 15*es+1 && j < 16*es+1
+                    for x = 8*es+1:9*es
+                        for y = j:16*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 9*es+1 % decima fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 1 && j < es+1
+                    for x = 9*es+1:10*es
+                        for y = j:es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 3*es+1 && j < 12*es+1
+                    for x = 9*es+1:10*es
+                        for y = j:12*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 14*es+1 && j < 15*es+1
+                    for x = 9*es+1:10*es
+                        for y = j:15*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 15*es+1 && j < 16*es+1
+                    for x = 9*es+1:10*es
+                        for y = j:16*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 10*es+1 % onceava fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 1 && j < es+1
+                    for x = 10*es+1:11*es
+                        for y = j:es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 2*es+1 && j < 4*es+1
+                    for x = 10*es+1:11*es
+                        for y = j:4*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 4*es+1 && j < 12*es+1
+                    for x = 10*es+1:11*es
+                        for y = j:12*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 12*es+1 && j < 15*es+1
+                    for x = 10*es+1:11*es
+                        for y = j:15*es
+                            im(x,y) = ro;
+                        end
+                    end
+                end
+                
+                if j >= 15*es+1 && j < 16*es+1
+                    for x = 10*es+1:11*es
+                        for y = j:16*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 11*es+1 % doceava fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= es+1 && j < 4*es+1
+                    for x = 11*es+1:12*es
+                        for y = j:4*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 6*es+1 && j < 7*es+1
+                    for x = 11*es+1:12*es
+                        for y = j:7*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 9*es+1 && j < 10*es+1
+                    for x = 11*es+1:12*es
+                        for y = j:10*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 12*es+1 && j < 15*es+1
+                    for x = 11*es+1:12*es
+                        for y = j:15*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 12*es+1 % treceava fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 2*es+1 && j < 3*es+1
+                    for x = 12*es+1:13*es
+                        for y = j:3*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 6*es+1 && j < 7*es+1
+                    for x = 12*es+1:13*es
+                        for y = j:7*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 9*es+1 && j < 10*es+1
+                    for x = 12*es+1:13*es
+                        for y = j:10*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 13*es+1 && j < 14*es+1
+                    for x = 12*es+1:13*es
+                        for y = j:14*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 13*es+1 % catorceava fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 2*es+1 && j < 3*es+1
+                    for x = 13*es+1:14*es
+                        for y = j:3*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 13*es+1 && j < 14*es+1
+                    for x = 13*es+1:14*es
+                        for y = j:14*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 14*es+1 % quinceava fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 3*es+1 && j < 4*es+1
+                    for x = 14*es+1:15*es
+                        for y = j:4*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+                if j >= 12*es+1 && j < 13*es+1
+                    for x = 14*es+1:15*es
+                        for y = j:13*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+            case 15*es+1 % dieciseisava fila
+                % im(i,j)=150; % Descomentar para ver puntos guia
+                if j >= 4*es+1 && j < 12*es+1
+                    for x = 15*es+1:16*es
+                        for y = j:12*es
+                            im(x,y) = ne;
+                        end
+                    end
+                end
+                
+        end
+    end
+end
+
+% Transformacion a tipo de datos single
+I1 = im2single(uint8(im));
+% 
+% % Visualizacion y guardado de la imagen
+figure(2)
+imshow(I1);
+% %imwrite(I1,'A_original.png');
