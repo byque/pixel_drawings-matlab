@@ -1,6 +1,8 @@
 # Pixel Drawings in Matlab
 English at the bottom
 
+Actualización: También funciona en Octave con el paquete de imágenes.
+
 Antecedentes:
 El primer dibujo (hongo_estatico.png) lo creé para una clase de procesamiento de imágenes. Me interesaba bastante poder crear una imagen con la que yo pudiera trabajar (escalar, rotar, etc.) y que a la vez haya sido creada por mí. A diferencia de Lena, esta imagen tenía que ser simple para poder dibujarla, de allí la idea de utilizar pixel-art para intentar crear una imagen. Como resultado cree el código hongo_estatico.m con el cual creo la imagen a travez de un trazo de línea por línea para generar una imagen de 512 px x 512 px.
 
@@ -14,6 +16,8 @@ De momento el proyecto queda totalmente parado. Pero me gustaría recibir coment
 
 
 Ideas about how to create pixel images in matlab for further procesing
+
+Update: It works with Octave with the image package.
 
 Background
 The first drawing (hongo_estatico.png) was created for an image processing class. I was interested in creating an image to work with Matlab (scale, rotate, etc), and also in an image that was created by me. Unlike Lena, this image had to be simple to be drawn, that is why I chose pixel-art to create the image. As a result I created hongo_estatico.m wich creates the image by drawing it line by line to generate a 512 px x 512 px.
