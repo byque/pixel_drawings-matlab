@@ -1,5 +1,7 @@
-# Pixel Drawings in Matlab
-English at the bottom
+Pixel Drawings in Matlab
+========================
+
+Ideas about how to create pixel images in matlab for further procesing. English at the bottom.
 
 Actualización: También funciona en Octave con el paquete de imágenes.
 
