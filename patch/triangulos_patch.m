@@ -35,3 +35,17 @@ v = [0 0; 1 0; 0 1; -1 0];
 f = [1 2 3; 1 3 4];
 subplot(3,2,[5,6]);
 patch('Faces', f, 'Vertices', v, 'FaceColor', 'blue')
+
+%% Coloreando
+figure
+v = [0 0; 1 0; 0 1];
+f = [1 2 3];
+c = [0; 5; 10];
+subplot(2,1,1);
+patch('Faces', f, 'Vertices', v, 'FaceVertexCData', c, 'FaceColor', 'interp')
+
+v = [0 0; 1 0; 0 1; -1 0; 0 -1];
+f = [1 2 3; 1 3 4; 1 4 5; 1 5 2];
+c = [10; 0; 0; 0; 0];
+subplot(2,1,2);
+patch('Faces', f, 'Vertices', v, 'FaceVertexCData', c, 'FaceColor', 'interp')
